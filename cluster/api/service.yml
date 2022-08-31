@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: bearnaisee-api-svc
+    labels:
+        app: bearnaisee-api
+spec:
+    type: NodePort
+    ports:
+        - port: 5000
+          targetPort: 80
+          nodePort: 30082
+    selector:
+        app: bearnaisee-api
